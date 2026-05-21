@@ -1,0 +1,73 @@
+/* contact.css */
+
+.contact-main {
+  padding: var(--space-xl) var(--space-lg);
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--red);
+}
+
+.contact-header {
+  margin-bottom: var(--space-xl);
+}
+
+.contact-title {
+  font-family: "Bebas", sans-serif;
+  font-size: var(--text-4xl);
+  color: var(--light-yellow);
+  letter-spacing: 0.05em;
+  margin: 0 0 var(--space-sm);
+}
+
+.contact-subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255, 242, 170, 0.65);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Wrapper matches the item-card / featured-box style from home */
+.contact-form-wrapper {
+  border: 2px solid var(--border-red);
+  background: var(--light-yellow);
+  padding: var(--space-md);
+}
+
+.contact-form-wrapper iframe {
+  display: block;
+  width: 100%;
+  /* dynamicHeight from Tally drives actual height — min keeps it usable before load */
+  min-height: 500px;
+  border: none;
+  overflow: hidden;
+  border: 2px ridge var(--border-red);
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 600px) {
+  .contact-main {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .contact-title {
+    font-size: var(--text-3xl);
+  }
+
+  .contact-form-wrapper {
+    padding: var(--space-sm);
+  }
+
+  .contact-form-wrapper iframe {
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-main {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .contact-form-wrapper iframe {
+    min-height: 700px;
+  }
+}

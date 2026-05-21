@@ -23,6 +23,7 @@ export default function Nav() {
                     <nav className="nav-buttons-container">
                         <Link className="nav-buttons" to="/">Home</Link>
                         <Link className="nav-buttons" to="/catalog">Catalog</Link>
+                        <Link className="nav-buttons" to="/contact">Contact Us</Link>
                     </nav>
                 </div>
                 <div className="nav-ad-holder">

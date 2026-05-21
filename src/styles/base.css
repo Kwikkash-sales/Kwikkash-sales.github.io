@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  background-color: black;
+  background-color: var(--red);
   color: white;
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.5;
