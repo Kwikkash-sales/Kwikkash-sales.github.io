@@ -1,0 +1,259 @@
+/* =============================================
+   MARKDOWN PAGE — Kwik Kash Clothing
+   Shared layout for Terms, Privacy, etc.
+   Mobile-first, 90s themed
+   ============================================= */
+
+.md-page-main {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--light-yellow);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Header banner ---------- */
+.md-page-header {
+    background: var(--red);
+    border-bottom: 6px ridge var(--border-red);
+    padding: var(--space-xl) var(--space-lg);
+    text-align: center;
+}
+
+.md-page-title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-4xl);
+    font-weight: 100;
+    color: var(--yellow);
+    text-shadow:
+        3px 3px 0 var(--border-red),
+        -1px -1px 0 var(--border-red);
+    letter-spacing: 4px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* ---------- Body wrapper ---------- */
+.md-page-body {
+    flex: 1;
+    padding: var(--space-lg) var(--space-md);
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ---------- Loading / Error ---------- */
+.md-page-status {
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-lg);
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.md-page-loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-red);
+    border-top-color: var(--red);
+    border-radius: 50%;
+    animation: md-spin 800ms linear infinite;
+}
+
+@keyframes md-spin {
+    to { transform: rotate(360deg); }
+}
+
+.md-page-error {
+    color: var(--light-red);
+}
+
+/* ---------- Rendered markdown content ---------- */
+.md-page-content {
+    background: white;
+    border: 4px solid var(--red);
+    padding: var(--space-lg) var(--space-lg);
+    font-family: 'Times New Roman', Times, serif;
+    color: #1a1a1a;
+    line-height: 1.75;
+}
+
+/* Headings */
+.md-page-content h1,
+.md-page-content h2,
+.md-page-content h3,
+.md-page-content h4 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+    color: var(--light-red);
+    text-shadow: 1px 1px 0 var(--border-red);
+    letter-spacing: 2px;
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+}
+
+.md-page-content h1 { font-size: var(--text-3xl); border-bottom: 3px ridge var(--border-red); padding-bottom: var(--space-xs); }
+.md-page-content h2 { font-size: var(--text-2xl); border-bottom: 2px dashed var(--border-red); padding-bottom: 4px; }
+.md-page-content h3 { font-size: var(--text-xl); }
+.md-page-content h4 { font-size: var(--text-lg); }
+
+/* First heading needs no extra top margin */
+.md-page-content h1:first-child,
+.md-page-content h2:first-child {
+    margin-top: 0;
+}
+
+/* Paragraphs */
+.md-page-content p {
+    font-size: var(--text-md);
+    margin: 0 0 var(--space-md);
+}
+
+/* Links */
+.md-page-content a {
+    color: var(--light-red);
+    text-decoration: underline;
+    transition: color 150ms ease-in-out;
+}
+
+.md-page-content a:hover {
+    color: var(--border-red);
+}
+
+/* Lists */
+.md-page-content ul,
+.md-page-content ol {
+    padding-left: var(--space-xl);
+    margin: 0 0 var(--space-md);
+}
+
+.md-page-content li {
+    font-size: var(--text-md);
+    margin-bottom: var(--space-xs);
+    line-height: 1.7;
+}
+
+.md-page-content ul li::marker {
+    color: var(--red);
+    content: "► ";
+}
+
+/* Blockquotes — treated as a 90s "highlight box" */
+.md-page-content blockquote {
+    background: var(--light-yellow);
+    border-left: 6px solid var(--red);
+    border-right: 2px solid var(--border-red);
+    margin: var(--space-md) 0;
+    padding: var(--space-sm) var(--space-md);
+    font-style: italic;
+    color: #333;
+}
+
+/* Code */
+.md-page-content code {
+    font-family: 'Courier New', Courier, monospace;
+    background: #f0e8d0;
+    border: 1px solid var(--border-red);
+    padding: 1px 5px;
+    font-size: 0.9em;
+}
+
+.md-page-content pre {
+    background: #1a1a1a;
+    color: #00ff00;
+    border: 3px inset var(--border-red);
+    padding: var(--space-md);
+    overflow-x: auto;
+    margin-bottom: var(--space-md);
+}
+
+.md-page-content pre code {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: var(--text-sm);
+    padding: 0;
+}
+
+/* Horizontal rule */
+.md-page-content hr {
+    border: none;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--yellow) 0px,
+        var(--yellow) 10px,
+        var(--border-red) 10px,
+        var(--border-red) 20px
+    );
+    margin: var(--space-lg) 0;
+}
+
+/* Tables */
+.md-page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--space-md);
+    font-size: var(--text-sm);
+}
+
+.md-page-content th {
+    background: var(--red);
+    color: var(--yellow);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    padding: var(--space-xs) var(--space-sm);
+    text-align: left;
+    border: 2px solid var(--border-red);
+}
+
+.md-page-content td {
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--border-red);
+}
+
+.md-page-content tr:nth-child(even) td {
+    background: #f9eecc;
+}
+
+/* Strong / em */
+.md-page-content strong {
+    color: var(--light-red);
+    font-weight: 700;
+}
+
+.md-page-content em {
+    font-style: italic;
+    color: #333;
+}
+
+/* ==============================================
+   RESPONSIVE — Tablet (≥640px)
+   ============================================== */
+@media (min-width: 640px) {
+    .md-page-body {
+        padding: var(--space-xl) var(--space-xl);
+    }
+
+    .md-page-content {
+        padding: var(--space-xl) var(--space-2xl);
+    }
+
+    .md-page-header {
+        padding: var(--space-xl) var(--space-xl);
+    }
+}
+
+/* ==============================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================== */
+@media (min-width: 1024px) {
+    .md-page-body {
+        padding: var(--space-2xl) var(--space-xl);
+    }
+}

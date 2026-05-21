@@ -12,4 +12,10 @@
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
    </url>
+   <url>
+      <loc>https://kwikkash.store/about</loc>
+      <lastmod>2024-06-01T12:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.7</priority>
+   </url>
 </urlset>

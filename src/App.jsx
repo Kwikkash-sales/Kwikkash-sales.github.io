@@ -6,6 +6,8 @@ import Home from '@/pages/Home';
 import Catalog from '@/pages/Catalog';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
+import Terms from "@/pages/Terms";
+import Privacy from "@/pages/Privacy";
 
 import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
 
@@ -57,6 +59,8 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="catalog" element={<Catalog />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="terms" element={<Terms />} />
+          <Route path="privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -1,0 +1,280 @@
+/* =============================================
+   FOOTER — Kwik Kash Clothing
+   90s maximalist, mobile-first
+   ============================================= */
+
+.site-footer {
+    width: 100%;
+    background: var(--red);
+    border-top: 6px ridge var(--border-red);
+    color: var(--yellow);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ---------- Marquee ticker ---------- */
+.footer-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: var(--border-red);
+    border-bottom: 3px solid var(--yellow);
+    padding: 6px 0;
+    white-space: nowrap;
+}
+
+.footer-marquee-track {
+    display: inline-flex;
+    animation: marquee-scroll 28s linear infinite;
+}
+
+.footer-marquee-track span {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-sm);
+    letter-spacing: 2px;
+    color: var(--yellow);
+    padding-right: 2rem;
+}
+
+@keyframes marquee-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ---------- Main body ---------- */
+.footer-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: var(--space-xl) var(--space-lg);
+    border-bottom: 3px dashed var(--border-red);
+}
+
+/* ---------- Brand block ---------- */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.footer-logo {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-4xl);
+    color: var(--yellow);
+    text-shadow:
+        3px 3px 0 var(--border-red),
+        -1px -1px 0 var(--border-red),
+        1px -1px 0 var(--border-red);
+    line-height: 0.9;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.footer-tagline {
+    font-style: italic;
+    font-size: var(--text-sm);
+    color: var(--light-yellow);
+    margin: 0;
+    border-left: 4px solid var(--yellow);
+    padding-left: var(--space-sm);
+}
+
+/* Classic 90s "badge" */
+.footer-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px ridge var(--yellow);
+    padding: 4px 10px;
+    background: var(--border-red);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-xs);
+    letter-spacing: 2px;
+    color: var(--yellow);
+    line-height: 1.4;
+    text-align: center;
+    margin-top: var(--space-xs);
+    /* Wobble on hover — pure 90s */
+    transition: transform 150ms ease-in-out;
+}
+
+.footer-badge:hover {
+    transform: rotate(-3deg) scale(1.05);
+}
+
+/* ---------- Nav ---------- */
+.footer-nav-heading {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-lg);
+    letter-spacing: 3px;
+    color: var(--light-yellow);
+    text-shadow: 2px 2px 0 var(--border-red);
+    margin: 0 0 var(--space-sm);
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 4px;
+}
+
+.footer-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-nav-link {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-md);
+    color: var(--light-yellow);
+    text-decoration: none;
+    transition: color 150ms ease-in-out, letter-spacing 150ms ease-in-out;
+    display: inline-block;
+}
+
+.footer-nav-link:hover {
+    color: var(--yellow);
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+/* ---------- Info block ---------- */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-info-line {
+    font-size: var(--text-sm);
+    color: var(--light-yellow);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.footer-email {
+    color: var(--yellow);
+    text-decoration: underline;
+    transition: color 150ms ease-in-out;
+}
+
+.footer-email:hover {
+    color: var(--light-yellow);
+}
+
+/* ---------- Divider ---------- */
+.footer-divider {
+    height: 6px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--yellow) 0px,
+        var(--yellow) 12px,
+        var(--border-red) 12px,
+        var(--border-red) 24px
+    );
+    margin: 0;
+}
+
+/* ---------- Copyright bar ---------- */
+.footer-copyright {
+    background: var(--border-red);
+    padding: var(--space-sm) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: var(--text-xs);
+    color: var(--light-yellow);
+    line-height: 1.6;
+}
+
+.footer-legal-link {
+    color: var(--yellow);
+    text-decoration: underline;
+    transition: color 150ms ease-in-out;
+}
+
+.footer-legal-link:hover {
+    color: var(--light-yellow);
+}
+
+/* Classic visitor counter aesthetic */
+.footer-counter-label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-xs);
+    color: var(--light-yellow);
+}
+
+.footer-counter {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    font-size: var(--text-sm);
+    background: #000;
+    color: #00ff00;
+    padding: 1px 6px;
+    border: 2px inset #444;
+    letter-spacing: 3px;
+}
+
+/* ==============================================
+   RESPONSIVE — Tablet (≥640px)
+   ============================================== */
+@media (min-width: 640px) {
+    .footer-body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: var(--space-xl);
+        padding: var(--space-xl);
+    }
+
+    .footer-brand {
+        flex: 1 1 200px;
+    }
+
+    .footer-nav {
+        flex: 0 1 140px;
+    }
+
+    .footer-info {
+        flex: 1 1 180px;
+    }
+
+    .footer-copyright {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: var(--space-sm) var(--space-xl);
+    }
+}
+
+/* ==============================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================== */
+@media (min-width: 1024px) {
+    .footer-body {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: var(--space-xl) var(--space-2xl);
+    }
+
+    .footer-brand {
+        flex: 0 0 auto;
+    }
+
+    .footer-nav {
+        flex: 0 0 auto;
+    }
+
+    .footer-info {
+        flex: 0 0 auto;
+    }
+
+    .footer-marquee-track span {
+        font-size: var(--text-md);
+    }
+}
