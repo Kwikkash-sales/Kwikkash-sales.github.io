@@ -1,6 +1,6 @@
 // Base imports
 import { useState, useEffect, useRef, useMemo } from 'react';
-import { useSearchParams } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 
 // CSS
 import "@/styles/pages/catalog.css";
