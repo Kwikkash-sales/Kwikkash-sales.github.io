@@ -9,8 +9,6 @@ import NotFound from '@/pages/NotFound';
 import Terms from "@/pages/Terms";
 import Privacy from "@/pages/Privacy";
 
-import MusicPlayer from "@/components/MusicPlayer/MusicPlayer";
-
 // Global retro overlay — sits on top of every page, pointer-events: none
 // so it never blocks clicks. Two layers:
 //   1. scanlines  — horizontal lines faking a CRT raster
@@ -53,7 +51,6 @@ export default function App() {
   return (
     <>
       <RetroOverlay />
-      <MusicPlayer />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
