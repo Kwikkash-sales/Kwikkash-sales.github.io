@@ -29,8 +29,8 @@ function RetroOverlay() {
           to bottom,
           transparent 0px,
           transparent 3px,
-          rgba(0, 0, 0, 0.20) 3px,
-          rgba(0, 0, 0, 0.20) 4px
+          rgba(0, 0, 0, 0.18) 3px,
+          rgba(0, 0, 0, 0.06) 4px
         )`,
       }} />
       {/* Vignette */}
@@ -40,7 +40,7 @@ function RetroOverlay() {
         background: `radial-gradient(
           ellipse at center,
           transparent 60%,
-          rgba(0, 0, 0, 0.55) 100%
+          rgba(0, 0, 0, 0.21) 100%
         )`,
       }} />
     </div>
