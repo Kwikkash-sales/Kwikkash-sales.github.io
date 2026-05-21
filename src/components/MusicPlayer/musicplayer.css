@@ -1,0 +1,208 @@
+:root {
+  --light-yellow: #fff2aa;
+  --yellow: #ffd000;
+  --light-red: #cc0000;
+  --red: rgb(180, 0, 0);
+  --border-red: rgb(126, 0, 0);
+}
+
+/* ─── Widget wrapper — fixed bottom right ────────────────────────── */
+
+.music-widget {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+/* ─── Slider panel (shown/hidden above the controls) ─────────────── */
+
+.music-slider-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--red);
+  border: 2px solid var(--border-red);
+  border-radius: 9999px;
+  padding: 0.45rem 0.9rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  animation: slide-up 0.18s ease;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.music-slider__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--light-yellow);
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+.music-slider__value {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--light-yellow);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+/* ─── Range input styling ────────────────────────────────────────── */
+
+.music-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 110px;
+  height: 4px;
+  border-radius: 9999px;
+  background: var(--border-red);
+  outline: none;
+  cursor: pointer;
+}
+
+.music-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--yellow);
+  border: 2px solid var(--border-red);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.music-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: var(--light-yellow);
+}
+
+.music-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--yellow);
+  border: 2px solid var(--border-red);
+  cursor: pointer;
+}
+
+/* ─── Bottom row: equalizer toggle + mute button ─────────────────── */
+
+.music-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Small equalizer/sliders icon button */
+.music-slider-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: var(--border-red);
+  border: 2px solid var(--border-red);
+  color: var(--light-yellow);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.music-slider-toggle svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.music-slider-toggle:hover {
+  background-color: var(--light-red);
+  transform: translateY(-2px);
+}
+
+.music-slider-toggle:active {
+  transform: scale(0.95);
+}
+
+.music-slider-toggle:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+/* ─── Main mute button ───────────────────────────────────────────── */
+
+.music-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  background-color: var(--red);
+  border: 2px solid var(--border-red);
+  color: var(--light-yellow);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+.music-btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
+.music-btn:hover {
+  background-color: var(--light-red);
+  border-color: var(--red);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.music-btn:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.music-btn:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+.music-btn--muted {
+  background-color: var(--yellow);
+  border-color: #c9a000;
+  color: var(--border-red);
+}
+
+.music-btn--muted:hover {
+  background-color: var(--light-yellow);
+  border-color: var(--yellow);
+}
+
+/* ─── Responsive: icon-only on very small screens ────────────────── */
+
+@media (max-width: 360px) {
+  .music-btn {
+    padding: 0.65rem;
+    border-radius: 50%;
+  }
+
+  .music-btn__label {
+    display: none;
+  }
+
+  .music-slider {
+    width: 80px;
+  }
+}
