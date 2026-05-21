@@ -1,1 +1,3 @@
-# Kwik Kash Test Commit
+# Kwik Kash Store
+
+### Site coming soon!

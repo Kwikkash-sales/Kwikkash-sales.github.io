@@ -1,0 +1,621 @@
+/* =============================================
+   CATALOG PAGE — Kwik Kash Clothing
+   90s streetwear aesthetic, mobile-first
+   ============================================= */
+
+/* ---------- Main container ---------- */
+.catalog-main {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--light-yellow);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Search ---------- */
+.catalog-search-wrapper {
+    position: relative;
+    margin: var(--space-lg) var(--space-md) 0;
+    max-width: 700px;
+    width: calc(100% - 2 * var(--space-md));
+    align-self: center;
+}
+
+.catalog-search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 4px solid var(--border-red);
+    gap: var(--space-sm);
+    padding: 0 var(--space-md);
+}
+
+.catalog-search-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.catalog-search-input {
+    flex: 1;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-lg);
+    padding: var(--space-sm) 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #111;
+    min-width: 0;
+}
+
+.catalog-search-input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.catalog-search-clear {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--light-red);
+    padding: 4px 6px;
+    line-height: 1;
+    transition: transform 150ms ease;
+    flex-shrink: 0;
+}
+
+.catalog-search-clear:hover {
+    transform: scale(1.2);
+}
+
+/* ---------- Suggestions dropdown ---------- */
+.catalog-suggestions {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 4px solid var(--border-red);
+    border-top: 2px solid var(--border-red);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    max-height: 280px;
+    overflow-y: auto;
+    box-shadow: 4px 4px 0 var(--border-red);
+}
+
+.catalog-suggestion-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+    border-bottom: 1px solid #e8dfc8;
+    gap: var(--space-sm);
+    transition: background 120ms ease;
+}
+
+.catalog-suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.catalog-suggestion-item:hover {
+    background: var(--light-yellow);
+}
+
+.suggestion-name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-md);
+    color: #111;
+}
+
+.suggestion-label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    color: white;
+    background: var(--red);
+    padding: 2px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.search-highlight {
+    background: var(--yellow);
+    color: var(--border-red);
+    font-weight: 700;
+    padding: 0 1px;
+}
+
+/* ---------- Filter bar ---------- */
+.catalog-filters-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin: var(--space-md) var(--space-md) 0;
+    flex-wrap: wrap;
+}
+
+.filter-toggle-btn {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-md);
+    letter-spacing: 2px;
+    background: var(--red);
+    color: var(--yellow);
+    border: 3px solid var(--border-red);
+    padding: var(--space-xs) var(--space-lg);
+    cursor: pointer;
+    transition: all 150ms ease;
+}
+
+.filter-toggle-btn:hover,
+.filter-toggle-btn.active {
+    background: var(--border-red);
+}
+
+.catalog-result-count {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-md);
+    color: #444;
+    font-style: italic;
+}
+
+.filter-clear-btn {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-sm);
+    background: none;
+    border: 2px solid var(--light-red);
+    color: var(--light-red);
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: all 150ms ease;
+}
+
+.filter-clear-btn:hover {
+    background: var(--light-red);
+    color: white;
+}
+
+/* ---------- Filter panel ---------- */
+.catalog-filter-panel {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 350ms ease-in-out;
+}
+
+.catalog-filter-panel.panel-open {
+    max-height: 800px;
+}
+
+.filter-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin: var(--space-md) var(--space-md) 0;
+    padding: var(--space-lg);
+    background: var(--yellow);
+    border: 4px ridge var(--border-red);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.filter-label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+    color: var(--light-red);
+    text-shadow: 1px 1px 0 var(--border-red);
+}
+
+.filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.filter-pill {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-sm);
+    background: white;
+    border: 2px solid var(--border-red);
+    color: #222;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: all 150ms ease;
+    white-space: nowrap;
+}
+
+.filter-pill:hover {
+    background: var(--light-yellow);
+    transform: translateY(-1px);
+}
+
+.filter-pill.pill-active {
+    background: var(--red);
+    color: var(--yellow);
+    border-color: var(--border-red);
+    font-weight: 700;
+}
+
+.filter-group--sort {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.filter-select {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-md);
+    background: white;
+    border: 2px solid var(--border-red);
+    color: #222;
+    padding: 5px var(--space-md);
+    cursor: pointer;
+    outline: none;
+    min-width: 200px;
+}
+
+.filter-select:focus {
+    border-color: var(--light-red);
+}
+
+/* ---------- Active filter tags ---------- */
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: var(--space-sm) var(--space-md) 0;
+    align-items: center;
+}
+
+.active-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--red);
+    color: var(--yellow);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-sm);
+    padding: 3px 10px 3px 12px;
+    border: 2px solid var(--border-red);
+}
+
+.active-tag button {
+    background: none;
+    border: none;
+    color: var(--yellow);
+    cursor: pointer;
+    font-size: 0.7rem;
+    padding: 0;
+    line-height: 1;
+    opacity: 0.8;
+    transition: opacity 120ms ease;
+}
+
+.active-tag button:hover {
+    opacity: 1;
+}
+
+/* ---------- Catalog grid section ---------- */
+.catalog-grid-section {
+    padding: var(--space-lg) var(--space-md) var(--space-2xl);
+    flex: 1;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+}
+
+/* ---------- Catalog item card ---------- */
+.catalog-card {
+    background: white;
+    border: 3px solid var(--border-red);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 180ms ease-in-out, box-shadow 180ms ease-in-out;
+    overflow: hidden;
+}
+
+.catalog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 4px 4px 0 var(--border-red);
+}
+
+.catalog-card--featured {
+    border-color: goldenrod;
+    border-width: 3px;
+}
+
+.catalog-card-star {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: goldenrod;
+    color: #3a2000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    z-index: 2;
+}
+
+.catalog-card-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #f0e8d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-bottom: 3px solid var(--border-red);
+}
+
+.catalog-card--featured .catalog-card-image {
+    border-bottom-color: goldenrod;
+}
+
+.catalog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalog-card-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        #e8dfc8,
+        #e8dfc8 10px,
+        #f0e8d0 10px,
+        #f0e8d0 20px
+    );
+}
+
+.catalog-card-placeholder span {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.9rem;
+    color: var(--light-red);
+    letter-spacing: 2px;
+    opacity: 0.5;
+}
+
+.catalog-card-body {
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+}
+
+.catalog-card-category {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: white;
+    background: var(--red);
+    padding: 2px 8px;
+    align-self: flex-start;
+    text-transform: uppercase;
+}
+
+.catalog-card--featured .catalog-card-category {
+    background: goldenrod;
+    color: #3a2000;
+}
+
+.catalog-card-name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-md);
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 4px 0 0;
+    line-height: 1.25;
+}
+
+.catalog-card-type {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-sm);
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+.catalog-card-price {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-lg);
+    color: var(--light-red);
+    margin: var(--space-xs) 0 0;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- States ---------- */
+.catalog-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: var(--text-lg);
+    color: #444;
+    min-height: 300px;
+}
+
+.catalog-loader {
+    width: 44px;
+    height: 44px;
+    border: 4px solid var(--border-red);
+    border-top-color: var(--red);
+    border-radius: 50%;
+    animation: cat-spin 800ms linear infinite;
+}
+
+@keyframes cat-spin {
+    to { transform: rotate(360deg); }
+}
+
+.catalog-error { color: var(--light-red); }
+.catalog-error-hint { font-size: var(--text-sm); color: #666; }
+
+.catalog-empty-title {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-2xl);
+    color: var(--light-red);
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.catalog-reset-btn {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: var(--text-md);
+    letter-spacing: 2px;
+    background: var(--red);
+    color: var(--yellow);
+    border: 3px solid var(--border-red);
+    padding: var(--space-sm) var(--space-xl);
+    cursor: pointer;
+    transition: background 150ms ease;
+}
+
+.catalog-reset-btn:hover {
+    background: var(--border-red);
+}
+
+/* ---------- Stock badge ---------- */
+.catalog-card-stock {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: #2a7a2a;
+  margin: 2px 0 0;
+  text-transform: uppercase;
+}
+
+.catalog-card-stock--low {
+  color: #b85c00;
+}
+
+.catalog-card-stock--out {
+  color: var(--light-red);
+  opacity: 0.8;
+}
+
+/* ==============================================
+   RESPONSIVE — Tablet (≥640px)
+   ============================================== */
+@media (min-width: 640px) {
+    .catalog-search-wrapper {
+        margin: var(--space-xl) auto 0;
+    }
+
+    .catalog-filters-bar {
+        margin: var(--space-md) var(--space-xl) 0;
+    }
+
+    .filter-grid {
+        margin: var(--space-md) var(--space-xl) 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+    }
+
+    .filter-group--sort {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .active-filters {
+        margin: var(--space-sm) var(--space-xl) 0;
+    }
+
+    .catalog-grid-section {
+        padding: var(--space-lg) var(--space-xl) var(--space-2xl);
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+/* ==============================================
+   RESPONSIVE — Desktop (≥1024px)
+   ============================================== */
+@media (min-width: 1024px) {
+    .catalog-search-wrapper {
+        margin: var(--space-xl) auto 0;
+        max-width: 700px;
+        width: 60%;
+    }
+
+    .catalog-filters-bar {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 var(--space-xl);
+    }
+
+    .filter-grid {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .filter-group--sort {
+        grid-column: auto;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .active-filters {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 var(--space-xl);
+    }
+
+    .catalog-grid-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        padding: var(--space-lg) var(--space-xl) var(--space-2xl);
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+/* ==============================================
+   RESPONSIVE — Wide (≥1440px)
+   ============================================== */
+@media (min-width: 1440px) {
+    .filter-grid,
+    .catalog-filters-bar,
+    .active-filters,
+    .catalog-grid-section {
+        max-width: 1400px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
