@@ -503,18 +503,16 @@
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 0.7rem;
   letter-spacing: 1px;
-  color: #2a7a2a;
   margin: 2px 0 0;
   text-transform: uppercase;
 }
 
-.catalog-card-stock--low {
-  color: #b85c00;
+.catalog-card-stock--in {
+  color: #2a7a2a;   /* green */
 }
 
 .catalog-card-stock--out {
-  color: var(--light-red);
-  opacity: 0.8;
+  color: var(--light-red);  /* red */
 }
 
 /* ==============================================

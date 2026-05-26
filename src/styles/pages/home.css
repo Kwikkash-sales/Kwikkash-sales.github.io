@@ -117,8 +117,6 @@
     background: var(--light-yellow);
     display: flex;
     flex-direction: column;
-    border-top: 4px solid var(--border-red);
-    border-bottom: 4px solid var(--border-red);
 }
 
 /* ---------- Description box ---------- */

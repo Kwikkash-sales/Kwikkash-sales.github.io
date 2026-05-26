@@ -86,9 +86,9 @@ function CatalogItemCard({ item, query }) {
   const type = item["Item Type"] || "";
   const gender = item["Item Gender"] || "";
   const featured = isFeatured(item);
-  const amountRaw = item["Item Amount"];
-  const amount = amountRaw !== undefined && amountRaw !== "" ? parseInt(amountRaw, 10) : null;
-  const hasStock = amount !== null && !isNaN(amount);
+  const stockedRaw = (item["Stocked?"] ?? "").toString().toLowerCase();
+  const hasStockField = stockedRaw === "true" || stockedRaw === "false";
+  const isInStock = stockedRaw === "true";
 
   return (
     <article className={`catalog-card${featured ? " catalog-card--featured" : ""}`}>
@@ -109,9 +109,9 @@ function CatalogItemCard({ item, query }) {
         </h3>
         {type && type !== "-" && <p className="catalog-card-type">{type}{gender && gender !== "-" ? ` · ${gender}` : ""}</p>}
         <p className="catalog-card-price">{price}</p>
-        {hasStock && (
-          <p className={`catalog-card-stock${amount === 0 ? " catalog-card-stock--out" : amount <= 3 ? " catalog-card-stock--low" : ""}`}>
-            {amount === 0 ? "OUT OF STOCK" : `${amount} in stock`}
+        {hasStockField && (
+          <p className={`catalog-card-stock${isInStock ? " catalog-card-stock--in" : " catalog-card-stock--out"}`}>
+            {isInStock ? "IN STOCK" : "OUT OF STOCK"}
           </p>
         )}
       </div>
