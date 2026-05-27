@@ -22,8 +22,8 @@ export default function Nav() {
                     <p className="nav-quality">★ <i>Quality Clothes</i> at <i>UNBEATABLE Prices!</i> ★</p>
                     <nav className="nav-buttons-container">
                         <Link className="nav-buttons" to="/">Home</Link>
-                        <Link className="nav-buttons" to="/catalog">Catalog</Link>
                         <Link className="nav-buttons" to="/contact">Contact Us</Link>
+                        <Link className="nav-buttons" to="/Raffle">Raffle</Link>
                     </nav>
                 </div>
                 <div className="nav-ad-holder">

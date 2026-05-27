@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from '@/layout/Layout';
 
 import Home from '@/pages/Home';
-import Catalog from '@/pages/Catalog';
 import Contact from '@/pages/Contact';
+import Raffle from '@/pages/Raffle';
 import NotFound from '@/pages/NotFound';
 import Terms from "@/pages/Terms";
 import Privacy from "@/pages/Privacy";
@@ -54,8 +54,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="catalog" element={<Catalog />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="raffle" element={<Raffle />} />
           <Route path="terms" element={<Terms />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />

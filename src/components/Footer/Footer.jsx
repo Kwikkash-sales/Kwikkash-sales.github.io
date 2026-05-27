@@ -4,7 +4,6 @@ import "./footer.css";
 
 const NAV_LINKS = [
   { label: "Home",     to: "/" },
-  { label: "Catalog",  to: "/catalog" },
   { label: "Contact",  to: "/contact" },
   { label: "Terms",    to: "/terms" },
   { label: "Privacy",  to: "/privacy" },
